@@ -20,6 +20,7 @@ const MPUploadSplitter = [
     'test60MB..|..',
 ];
 const MPDownload = 'MPtmpfile';
+const MPDownloadCopy = 'MPtmpfile2';
 const bucket = 'universe';
 const nonexist = 'nonexist';
 const invalidName = 'VOID';
@@ -473,7 +474,9 @@ describe('s3cmd multipart upload', function titi() {
 
     after('delete the multipart and the downloaded file', done => {
         deleteFile(MPUpload, () => {
-            deleteFile(MPDownload, done);
+            deleteFile(MPDownload, () => {
+                deleteFile(MPDownloadCopy, done);
+            });
         });
     });
 
@@ -493,8 +496,25 @@ describe('s3cmd multipart upload', function titi() {
         diff(MPUpload, MPDownload, done);
     });
 
+    it('should copy an object that was put via multipart upload', done => {
+        exec(['cp', `s3://${bucket}/${MPUpload}`,
+        `s3://${bucket}/${MPUpload}copy`], done);
+    });
+
+    it('should get an object that was copied', done => {
+        exec(['get', `s3://${bucket}/${MPUpload}copy`, MPDownloadCopy], done);
+    });
+
+    it('downloaded copy file should equal original uploaded file', done => {
+        diff(MPUpload, MPDownloadCopy, done);
+    });
+
     it('should delete multipart uploaded object', done => {
         exec(['rm', `s3://${bucket}/${MPUpload}`], done);
+    });
+
+    it('should delete copy of multipart uploaded object', done => {
+        exec(['rm', `s3://${bucket}/${MPUpload}copy`], done);
     });
 
     it('should not be able to get deleted object', done => {
