@@ -21,7 +21,9 @@
   "dependencies": {
     "arsenal": "scality/Arsenal",
     "async": "~1.4.2",
+    "aws-sdk": "^2.4.0",
     "bucketclient": "scality/bucketclient",
+    "highland": "^2.8.1",
     "ioctl": "^2.0.0",
     "level": "^1.4.0",
     "level-sublevel": "^6.5.4",
@@ -31,6 +33,7 @@
     "sproxydclient": "scality/sproxydclient",
     "utf8": "~2.1.1",
     "vaultclient": "scality/vaultclient",
+    "walk": "^2.3.9",
     "werelogs": "scality/werelogs",
     "xml": "~1.0.0",
     "xml2js": "~0.4.12"
