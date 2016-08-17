@@ -1,5 +1,5 @@
 'use strict'; // eslint-disable-line strict
-require('babel-core/register');
+require('babel-register');
 
 const assert = require('assert');
 const fs = require('fs');

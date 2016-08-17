@@ -5,7 +5,7 @@ const proc = require('child_process');
 const process = require('process');
 const parseString = require('xml2js').parseString;
 
-require('babel-core/register');
+require('babel-register');
 const conf = require('../../../lib/Config').default;
 
 const transport = conf.https ? 'https' : 'http';

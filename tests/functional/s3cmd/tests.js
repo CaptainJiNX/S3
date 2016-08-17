@@ -4,7 +4,7 @@ const proc = require('child_process');
 const process = require('process');
 const assert = require('assert');
 const fs = require('fs');
-require('babel-core/register');
+require('babel-register');
 const conf = require('../../../lib/Config').default;
 
 const configCfg = conf.https ? 's3cfg_ssl' : 's3cfg';

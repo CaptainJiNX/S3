@@ -21,10 +21,6 @@
   "dependencies": {
     "arsenal": "scality/Arsenal",
     "async": "~1.4.2",
-    "babel-core": "^6.2.1",
-    "babel-plugin-transform-es2015-destructuring": "^6.1.18",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.2.0",
-    "babel-plugin-transform-es2015-parameters": "^6.2.0",
     "bucketclient": "scality/bucketclient",
     "ioctl": "^2.0.0",
     "level": "^1.4.0",
@@ -43,8 +39,14 @@
       "ioctl": "2.0.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.2.0",
+    "babel-cli": "^6.9.0",
     "babel-eslint": "^6.0.0",
+    "babel-plugin-transform-es2015-destructuring": "^6.1.18",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.2.0",
+    "babel-plugin-transform-es2015-parameters": "^6.2.0",
+    "babel-plugin-transform-object-assign": "^6.8.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-register": "^6.9.0",
     "commander": "^2.9.0",
     "eslint": "^2.4.0",
     "eslint-config-airbnb": "^6.0.0",
@@ -57,13 +59,15 @@
     "node-mocks-http": "^1.5.2"
   },
   "scripts": {
-    "ft_test": "mocha tester.js --compilers js:babel-core/register",
+    "compile": "babel lib -d dist",
+    "prepublish": "npm run compile",
+    "ft_test": "mocha tester.js --compilers js:babel-register",
     "init": "node init.js",
     "lint": "eslint $(git ls-files '*.js')",
     "lint_md": "mdlint $(git ls-files '*.md')",
     "mem_backend": "S3BACKEND=mem node index.js",
     "start": "node init.js && node index.js",
-    "test": "S3BACKEND=mem mocha --compilers js:babel-core/register --recursive tests/unit",
-    "unit_coverage": "mkdir -p coverage/unit/ && S3BACKEND=mem MOCHA_FILE=$CIRCLE_TEST_REPORTS/unit/unit.xml istanbul cover --dir coverage/unit _mocha -- --compilers js:babel-core/register --reporter mocha-junit-reporter --recursive tests/unit"
+    "test": "S3BACKEND=mem mocha --compilers js:babel-register --recursive tests/unit",
+    "unit_coverage": "mkdir -p coverage/unit/ && S3BACKEND=mem MOCHA_FILE=$CIRCLE_TEST_REPORTS/unit/unit.xml istanbul cover --dir coverage/unit _mocha -- --compilers js:babel-register --reporter mocha-junit-reporter --recursive tests/unit"
   }
 }
