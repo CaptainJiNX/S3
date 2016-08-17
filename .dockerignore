@@ -1,0 +1,10 @@
+node_modules/
+.gitignore
+.git/
+.editorconfig
+.idea/
+*.log
+*.iml
+.project
+.DS_Store
+dist/
