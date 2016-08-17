@@ -7,7 +7,7 @@ import { parseString } from 'xml2js';
 
 import bucketPut from '../../../lib/api/bucketPut';
 import completeMultipartUpload from '../../../lib/api/completeMultipartUpload';
-import constants from '../../../constants';
+import constants from '../../../lib/constants';
 import { cleanup, DummyRequestLogger, makeAuthInfo } from '../helpers';
 import { ds } from '../../../lib/data/in_memory/backend';
 import initiateMultipartUpload from '../../../lib/api/initiateMultipartUpload';

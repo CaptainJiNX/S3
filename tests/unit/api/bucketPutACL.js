@@ -4,7 +4,7 @@ import assert from 'assert';
 import aclUtils from '../../../lib/utilities/aclUtils';
 import bucketPut from '../../../lib/api/bucketPut';
 import bucketPutACL from '../../../lib/api/bucketPutACL';
-import constants from '../../../constants';
+import constants from '../../../lib/constants';
 import metadata from '../metadataswitch';
 import { cleanup, DummyRequestLogger, makeAuthInfo } from '../helpers';
 

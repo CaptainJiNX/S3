@@ -3,7 +3,7 @@ import assert from 'assert';
 
 import bucketDelete from '../../../lib/api/bucketDelete';
 import bucketPut from '../../../lib/api/bucketPut';
-import constants from '../../../constants';
+import constants from '../../../lib/constants';
 import metadata from '../metadataswitch';
 import objectPut from '../../../lib/api/objectPut';
 import { cleanup, DummyRequestLogger, makeAuthInfo } from '../helpers';

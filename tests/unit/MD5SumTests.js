@@ -1,7 +1,7 @@
 import assert from 'assert';
 import DummyRequest from './DummyRequest';
 import MD5Sum from '../../lib/utilities/MD5Sum';
-import constants from '../../constants';
+import constants from '../../lib/constants';
 
 function consume(stream) {
     stream.on('data', () => { });

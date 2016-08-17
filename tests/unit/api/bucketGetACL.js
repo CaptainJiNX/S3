@@ -5,7 +5,7 @@ import { parseString } from 'xml2js';
 import bucketPut from '../../../lib/api/bucketPut';
 import bucketGetACL from '../../../lib/api/bucketGetACL';
 import bucketPutACL from '../../../lib/api/bucketPutACL';
-import constants from '../../../constants';
+import constants from '../../../lib/constants';
 import { cleanup, DummyRequestLogger, makeAuthInfo } from '../helpers';
 
 const log = new DummyRequestLogger();

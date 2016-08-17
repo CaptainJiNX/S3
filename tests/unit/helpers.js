@@ -1,5 +1,5 @@
 import AuthInfo from '../../lib/auth/AuthInfo';
-import constants from '../../constants';
+import constants from '../../lib/constants';
 import { metadata } from '../../lib/metadata/in_memory/metadata';
 import { resetCount, ds } from '../../lib/data/in_memory/backend';
 

@@ -1,6 +1,6 @@
 import assert from 'assert';
 import BucketInfo from '../../../lib/metadata/BucketInfo';
-import constants from '../../../constants';
+import constants from '../../../lib/constants';
 import { isBucketAuthorized } from
     '../../../lib/api/apiUtils/authorization/aclChecks';
 

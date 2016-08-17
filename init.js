@@ -6,7 +6,7 @@ const fs = require('fs');
 const os = require('os');
 
 const async = require('async');
-const constants = require('./constants').default;
+const constants = require('./lib/constants').default;
 const config = require('./lib/Config.js').default;
 const logger = require('./lib/utilities/logger.js').logger;
 

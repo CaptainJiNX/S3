@@ -2,7 +2,7 @@ import { errors } from 'arsenal';
 import assert from 'assert';
 
 import bucketPut from '../../../lib/api/bucketPut';
-import constants from '../../../constants';
+import constants from '../../../lib/constants';
 import metadata from '../metadataswitch';
 import { cleanup, DummyRequestLogger, makeAuthInfo } from '../helpers';
 

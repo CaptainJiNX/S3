@@ -11,7 +11,7 @@ import bucketPutACL from '../../../lib/api/bucketPutACL';
 import bucketDelete from '../../../lib/api/bucketDelete';
 import completeMultipartUpload from
     '../../../lib/api/completeMultipartUpload';
-import constants from '../../../constants';
+import constants from '../../../lib/constants';
 import DummyRequest from '../DummyRequest';
 import initiateMultipartUpload from
     '../../../lib/api/initiateMultipartUpload';

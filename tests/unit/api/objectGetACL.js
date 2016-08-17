@@ -5,7 +5,7 @@ import async from 'async';
 import { parseString } from 'xml2js';
 
 import bucketPut from '../../../lib/api/bucketPut';
-import constants from '../../../constants';
+import constants from '../../../lib/constants';
 import { cleanup, DummyRequestLogger, makeAuthInfo } from '../helpers';
 import objectPut from '../../../lib/api/objectPut';
 import objectGetACL from '../../../lib/api/objectGetACL';

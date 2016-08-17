@@ -3,7 +3,7 @@ import assert from 'assert';
 import { parseString } from 'xml2js';
 
 import BucketInfo from '../../../lib/metadata/BucketInfo';
-import constants from '../../../constants';
+import constants from '../../../lib/constants';
 import { cleanup, DummyRequestLogger, makeAuthInfo } from '../helpers';
 import { metadata as inMemMetadata } from
     '../../../lib/metadata/in_memory/metadata';
